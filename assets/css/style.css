@@ -21,8 +21,10 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* ================= HEADER ================= */
 .header {
+  height: 80px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -30,6 +32,11 @@ body {
   background: rgba(0,0,0,0.6);
 }
 
+.logo img {
+  height: 55px;     /* 원하는 크기로 조절 */
+  width: auto;
+  display: block;
+}
 .header .container {
   max-width: 1200px;
   margin: auto;
@@ -38,7 +45,38 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+/* .header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
 
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-header {
+  background: #fff;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid #fff;
+}
+
+.btn-header:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* 카카오톡만 살짝 포인트 주고 싶으면 */
+.btn-header.kakao {
+  border: 1px solid #fff;
+}
 .logo {
   font-size: 20px;
   font-weight: 800;
@@ -756,6 +794,97 @@ background-color: #f0f0f0; /* 밝은 회색 계열 */
 .business-hours li.today .time {
   font-weight: 900;
 }
+
+/* ================= CONTACT CTA ================= */
+.contact-cta {
+   opacity: 1 !important;
+  transform: none !important;
+  background: #f8f9fa;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.cta-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* 전화 */
+.cta-btn.call {
+  background: #03c75a;
+  color: #fff;
+}
+
+.cta-btn.call:hover {
+  background: #02b351;
+}
+
+/* 카카오톡 */
+.cta-btn.kakao {
+  background: #fee500;
+  color: #3c1e1e;
+}
+
+.cta-btn.kakao:hover {
+  background: #f5dc00;
+}
+/* ================= HERO CTA ================= */
+.hero-cta {
+  margin-top: 28px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  min-width: 200px;
+  height: 56px;
+  padding: 0 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+/* 전화 버튼 */
+.hero-btn.call {
+  background: linear-gradient(135deg, #03c75a, #00b84a);
+  color: #fff;
+}
+
+.hero-btn.call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(3,199,90,0.35);
+}
+
+/* 카카오 버튼 */
+.hero-btn.kakao {
+  background: #fee500;
+  color: #3c1e1e;
+}
+
+.hero-btn.kakao:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(254,229,0,0.45);
+}
 /* ================= PC ================= */
 @media (min-width: 769px) {
   .partners-track {
@@ -859,6 +988,10 @@ background-color: #f0f0f0; /* 밝은 회색 계열 */
     font-size: 1.4rem;
     padding-bottom: 16px;
   }
+  .contact-buttons {
+    flex-direction: column;
+  }
+  
 }
 /* ================= 반응형 ================= */
 @media (max-width: 1024px) {
